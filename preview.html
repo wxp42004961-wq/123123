@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>驾校科二自动分车管理系统 - 方案预览</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: #f6f8fa;
+      color: #24292f;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 980px;
+      margin: 24px auto;
+      background: #fff;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(140,149,159,.2);
+    }
+    h1,h2,h3 { margin-top: 1.4em; }
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: .92rem;
+    }
+    pre {
+      background: #0d1117;
+      color: #c9d1d9;
+      padding: 14px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    ul { padding-left: 20px; }
+    .tip {
+      margin: 12px 0 0;
+      background: #dbeafe;
+      color: #1e3a8a;
+      padding: 12px;
+      border-left: 4px solid #2563eb;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>驾校科二自动分车管理系统（完整开发方案）</h1>
+    <p>这是便于你快速“预览效果”的 HTML 版本，内容与 README 同步为同一方案结构。</p>
+    <div class="tip">提示：本页用于视觉预览与汇报展示；正式内容仍建议以 <code>README.md</code> 为准。</div>
+
+    <h2>预览目录</h2>
+    <ul>
+      <li>数据库设计（8张核心表）</li>
+      <li>ER关系说明</li>
+      <li>API模块划分</li>
+      <li>自动分车算法流程与伪代码</li>
+      <li>页面原型、前后端结构、Docker部署</li>
+      <li>优化建议与MVP开发顺序</li>
+    </ul>
+
+    <h2>核心流程预览</h2>
+    <pre><code>加载教练数据
+    ↓
+计算招生占比
+    ↓
+加载学员池
+    ↓
+固定学员优先分配
+    ↓
+指定教练学员分配
+    ↓
+VIP池按比例分配
+    ↓
+上班族池按比例分配
+    ↓
+普通池补齐
+    ↓
+人数平衡修正
+    ↓
+禁忌规则校验
+    ↓
+重复遗漏校验
+    ↓
+生成结果</code></pre>
+
+    <h2>本地预览方式</h2>
+    <pre><code># 在仓库根目录执行
+python3 -m http.server 8080
+# 浏览器打开
+http://localhost:8080/preview.html</code></pre>
+
+    <p>如需，我下一步可以把这份预览升级成「交互式原型」（导航菜单、折叠章节、图表占位、移动端适配）。</p>
+  </main>
+</body>
+</html>
